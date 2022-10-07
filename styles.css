@@ -16,7 +16,7 @@ body {
 
 .bootstrap-div {
     height: 100%;
-    max-height: 700px;
+    max-height: 600px;
 
 }
 
@@ -28,7 +28,7 @@ body {
     width: 100%;
     max-width: 600px;
     height: 100%;
-    max-height: 700px;
+    max-height: 600px;
     margin: 1em;
 
 }
@@ -81,4 +81,11 @@ h1.temp {
 
 .wind {
     margin-bottom: 20px;
+}
+
+.netlify {
+    padding-top: 120px;
+    color: white;
+    justify-content: center;
+    
 }

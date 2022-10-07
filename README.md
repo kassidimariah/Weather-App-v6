@@ -1,2 +1,2 @@
 # Weather-App-v6
- API working, current location working, needs more fun stuff
+This is a fun weather app I did in the SheCodes Plus React boot camp. 

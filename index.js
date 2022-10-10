@@ -31,7 +31,6 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", showInput);
 
 
-
 // API function
 function apiFunction(userInput) {
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=2d8475319de9c96b16189b154959ebf6&units=imperial`;
@@ -119,6 +118,7 @@ function changeToF(event) {
   document.getElementById("temp-id").innerHTML = "59";
 }
 
+//Buttons for temp conversion- add in this week
 //let clickC = document.querySelector("#celsius-button");
 //clickC.addEventListener("click", changeToC);
 

@@ -85,6 +85,24 @@ h1.temp {
     margin-bottom: 20px;
 }
 
+.weather-forecast {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.weather-forecast-date {
+    font-size: 16px;
+    color: #dadde1;
+}
+
+.weather-forecast-temp-max {
+    font-size: 16px;
+}
+
+.weather-forecast-temp-min {
+    font-size: 16px;
+}
+
 .netlify {
     padding-top: 105px;
     color: white;

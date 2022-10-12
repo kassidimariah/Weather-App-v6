@@ -87,7 +87,9 @@ function showPosition(position) {
     document.getElementById("description-id").innerHTML = apiData.weather[0].main;
     document.getElementById("humidity-id").innerHTML = apiData.main.humidity;
     document.getElementById("wind-id").innerHTML = Math.round(apiData.wind.speed);
-
+    let iconElement = document.getElementById("weather-icon");
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${apiData.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", apiData.weather[0].description);
     document.getElementById("temp-id").innerHTML = Math.round(apiData.main.temp);
     }
   };

@@ -42,21 +42,21 @@ function apiFunction(userInput) {
 
     if (request.status === 200) {
       let apiData = JSON.parse(request.response);
-      document.getElementById(
-        "city"
-      ).innerHTML = `Current conditions: ${apiData.name}`;
+      document.getElementById("city").innerHTML = `Current conditions: ${apiData.name}`;
       console.log(apiData);
       //change temp on this line with similar code once city is working
-      document.getElementById("description-id").innerHTML =
-        apiData.weather[0].main;
+      document.getElementById("description-id").innerHTML = apiData.weather[0].main;
       document.getElementById("humidity-id").innerHTML = apiData.main.humidity;
-      document.getElementById("wind-id").innerHTML = Math.round(
-        apiData.wind.speed
-      );
-      document.getElementById("temp-id").innerHTML = Math.round(
-        apiData.main.temp
-      );
-    } else {
+      document.getElementById("wind-id").innerHTML = Math.round(apiData.wind.speed);
+      
+      //Weather icon innerHTML
+      //document.getElementById("weather-icon").innerHTML = apiData.weather[0].icon;
+      let iconElement = document.getElementById("weather-icon");
+      iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${apiData.weather[0].icon}@2x.png`);
+      iconElement.setAttribute("alt", apiData.weather[0].description);
+
+      document.getElementById("temp-id").innerHTML = Math.round(apiData.main.temp);
+    }else {
       alert("Invalid city. Please enter a valid city.");
     }
   };

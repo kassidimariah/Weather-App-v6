@@ -112,3 +112,14 @@ h1.temp {
     justify-content: center;
     
 }
+
+#fahrenheit-button {
+    margin: 10px;
+    margin-left: 20px;
+   
+}
+
+#celsius-button {
+    margin: 10px;
+    margin-left: 20px;
+}

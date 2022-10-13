@@ -38,6 +38,7 @@ searchForm.addEventListener("submit", showInput);
 
 // API function
 function apiFunction(userInput) {
+  isCelsius = false;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=2d8475319de9c96b16189b154959ebf6&units=imperial`;
   let request = new XMLHttpRequest();
   request.open("GET", apiURL);
@@ -69,6 +70,7 @@ function apiFunction(userInput) {
 
 
 function showPosition(position) {
+  isCelsius = false;
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   console.log(latitude);

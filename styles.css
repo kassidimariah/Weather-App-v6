@@ -74,8 +74,16 @@ input.search-bar {
     font-family: inherit;
     font-size: 105%;
     width: calc(100% - 55px);
+    margin-bottom: 30px;
 }
 
+.todays-forecast {
+    margin-left: 20px;
+}
+
+.city {
+    margin-left: 20px;
+}
 
 h1.temp {
     margin: 10px;
@@ -121,6 +129,7 @@ h1.temp {
     display: flex;
     justify-content: center;
     color: white;
+    font-weight: bolder;
     
 }
 

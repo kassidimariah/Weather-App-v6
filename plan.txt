@@ -1,8 +1,4 @@
-Plan for this week: 
-1. Add the CSS and HTML for the forecast
-    a. Where should the new data go, exactly? 
-    b. Insert a new container class
-    c. Within the container, insert rows
-    d. Within the rows, insert columns 
-2. Add the API call to get the future forecast. Will need to use another API for future predictions. 
-3. Replace the fake data with real time data from new API. 
+10/12/2022 - weekend plan: 
+
+1. Get the celsius and fahrenheit buttons added and functioning 
+2. Make the CSS nicer

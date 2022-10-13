@@ -59,7 +59,7 @@ body {
 
 
 button:hover {
-    background: #7c7c7c6b;
+    background: green;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
@@ -78,20 +78,31 @@ input.search-bar {
 
 
 h1.temp {
-    margin: 0;
+    margin: 10px;
+}
+
+.description {
+    margin-left: 10px;
+}
+
+.humidity {
+    margin-left: 10px;
 }
 
 .wind {
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .weather-forecast {
     margin-top: 20px;
     text-align: center;
     
+    
 }
 
 .weather-forecast-date {
+    
     font-size: 16px;
     color: #dadde1;
     opacity: 0.5;
@@ -107,9 +118,9 @@ h1.temp {
 
 
 .netlify {
-    padding-top: 105px;
-    color: white;
+    display: flex;
     justify-content: center;
+    color: white;
     
 }
 
@@ -123,3 +134,8 @@ h1.temp {
     margin: 10px;
     margin-left: 20px;
 }
+
+#current-location {
+    margin-left: 10px;
+}
+

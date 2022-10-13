@@ -108,6 +108,8 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+let celsiusBool = false;
+let fahrenheitBool = false;
 
 
 getCurrentPosition();
@@ -115,19 +117,27 @@ getCurrentPosition();
 //Celsius and Fahrenheit buttons
 function changeToC(event) {
   event.preventDefault();
-  let changeToC = document.querySelector("#celsius-button");
-  document.getElementById("temp-id").innerHTML = "15";
+  let temperatureElement = document.querySelector("#temp-id");
+  console.log(temperatureElement);
+  let celsiusTemp = (temperatureElement.innerHTML - 32) * 5 / 9;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  //document.getElementById("temp-id").innerHTML = "15";
+  alert("C clicked");
 }
 
 function changeToF(event) {
   event.preventDefault();
-  let changeToF = document.querySelector("#fahrenheit-button");
-  document.getElementById("temp-id").innerHTML = "59";
+  let temperatureElement = document.querySelector("#temp-id");
+  console.log(temperatureElement);
+  let fahrenheitTemp = (temperatureElement.innerHTML * 9) /5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  //document.getElementById("temp-id").innerHTML = "59";
+  alert("F clicked");
 }
 
 //Buttons for temp conversion- add in this week
-//let clickC = document.querySelector("#celsius-button");
-//clickC.addEventListener("click", changeToC);
+let clickC = document.querySelector("#celsius-button");
+clickC.addEventListener("click", changeToC);
 
-//let clickF = document.querySelector("#fahrenheit-button");
-//clickF.addEventListener("click", changeToF);
+let clickF = document.querySelector("#fahrenheit-button");
+clickF.addEventListener("click", changeToF);

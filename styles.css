@@ -135,7 +135,7 @@ h1.temp {
 
 
 
-#fahrenheit-link {
+#fahrenheit-button {
     margin: 10px;
     margin-left: 40px;
     font-size: 20px;
@@ -145,14 +145,15 @@ h1.temp {
    
 }
 
-#celsius-link {
+#celsius-button {
     margin: 10px;
     margin-left: 10px;
     font-size: 20px;
     text-decoration: none;
     cursor: default;
-    
 }
+
+
 
 #current-location {
     margin-left: 10px;

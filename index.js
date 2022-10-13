@@ -3,7 +3,12 @@ let month = today.toLocaleString('default', { month: 'long' });
 let currentDate =
   (month) + " " + today.getDate() + ", " + today.getFullYear();
 let currentTime =
-  today.toLocaleTimeString();
+  today.toLocaleTimeString(undefined, {
+    
+    hour:   '2-digit',
+    minute: '2-digit', 
+    
+  });
 
 console.log(currentDate);
 console.log(currentTime);

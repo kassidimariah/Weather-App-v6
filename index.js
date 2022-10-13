@@ -108,8 +108,7 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let celsiusBool = false;
-let fahrenheitBool = false;
+
 
 
 getCurrentPosition();
@@ -135,9 +134,9 @@ function changeToF(event) {
   alert("F clicked");
 }
 
-//Buttons for temp conversion- add in this week
-let clickC = document.querySelector("#celsius-button");
+
+let clickC = document.querySelector("#celsius-link");
 clickC.addEventListener("click", changeToC);
 
-let clickF = document.querySelector("#fahrenheit-button");
+let clickF = document.querySelector("#fahrenheit-link");
 clickF.addEventListener("click", changeToF);

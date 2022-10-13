@@ -59,7 +59,7 @@ body {
 
 
 button:hover {
-    background: green;
+    background: silver;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
@@ -133,18 +133,33 @@ h1.temp {
     
 }
 
-#fahrenheit-button {
+#fahrenheit-link {
     margin: 10px;
-    margin-left: 20px;
+    margin-left: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: default;
    
 }
 
-#celsius-button {
+#celsius-link {
     margin: 10px;
-    margin-left: 0px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: default;
 }
 
 #current-location {
     margin-left: 10px;
 }
 
+
+.temp-converter .active {
+    color: palevioletred;
+
+}
+
+#my-link {
+    color: White;
+}

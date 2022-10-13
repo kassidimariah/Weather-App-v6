@@ -113,30 +113,36 @@ function getCurrentPosition() {
 
 getCurrentPosition();
 
+let isCelsius = false; 
+
 //Celsius and Fahrenheit buttons
 function changeToC(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-id");
-  console.log(temperatureElement);
-  let celsiusTemp = (temperatureElement.innerHTML - 32) * 5 / 9;
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  //document.getElementById("temp-id").innerHTML = "15";
-  alert("C clicked");
+  if(!isCelsius){
+    let celsiusTemp = (temperatureElement.innerHTML - 32) * 5 / 9;
+    temperatureElement.innerHTML = Math.round(celsiusTemp);
+    isCelsius = true;
+  }
+  
+  //alert("C clicked");
 }
 
 function changeToF(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-id");
-  console.log(temperatureElement);
-  let fahrenheitTemp = (temperatureElement.innerHTML * 9) /5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  if(isCelsius){
+    let fahrenheitTemp = (temperatureElement.innerHTML * 9) /5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+    isCelsius = false;
+  }
   //document.getElementById("temp-id").innerHTML = "59";
-  alert("F clicked");
+  //alert("F clicked");
 }
 
 
-let clickC = document.querySelector("#celsius-link");
+let clickC = document.querySelector("#celsius-button");
 clickC.addEventListener("click", changeToC);
 
-let clickF = document.querySelector("#fahrenheit-link");
+let clickF = document.querySelector("#fahrenheit-button");
 clickF.addEventListener("click", changeToF);

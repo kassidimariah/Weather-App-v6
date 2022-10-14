@@ -148,3 +148,41 @@ clickC.addEventListener("click", changeToC);
 
 let clickF = document.querySelector("#fahrenheit-button");
 clickF.addEventListener("click", changeToF);
+
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = ` <div class="row">
+     
+      <div class="col">
+          <div class="weather-forecast-date">
+                Mon
+           </div>
+           <div class="weather-forecast-icon">
+            <i class="fa-solid fa-sun"></i>
+           </div>
+        </div>   
+  </div>
+          
+    <div class="row">
+        <div class="col">
+            <div class="weather-forecast-temps">
+               <span class="weather-forecast-temp-max">
+                    63°
+               </span>
+               <span class="weather-forecast-temp-min">
+                    49°
+               </span>  
+            </div>  
+        </div>
+       
+  
+  </div>
+     
+  </div>
+      
+  </div>   `
+}
+
+
+displayForecast();

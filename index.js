@@ -152,20 +152,22 @@ clickF.addEventListener("click", changeToF);
 
 function displayForecast() {
   let forecastElement = document.querySelector("#weather-forecast");
+  let days = ["Mon", "Tue", "Wed"];
   
   let forecastHTML = `<div class="row">`;
-  forecastHTML = forecastHTML + `
+
+  days.forEach(function(day){
+    
+    forecastHTML = 
+      forecastHTML + 
+    `
       <div class="col">
           <div class="weather-forecast-date">
-                Mon
+                ${day}
            </div>
-           <div class="weather-forecast-icon">
-            <i class="fa-solid fa-sun"></i>
-           </div>
-        </div>   
-  </div>      
-    <div class="row">
-        <div class="col">
+              <div class="weather-forecast-icon">
+                <i class="fa-solid fa-sun"></i>
+              </div>
             <div class="weather-forecast-temps">
                <span class="weather-forecast-temp-max">
                     63°
@@ -174,14 +176,13 @@ function displayForecast() {
                     49°
                </span>  
             </div>  
-        </div>
-  
-     
-
-`;
-  
-  forecastHTML = forecastHTML + '</div>';
+        </div>       
+  `;
+});
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+  
+  
   
 }
 

@@ -54,6 +54,7 @@ function apiFunction(userInput) {
       document.getElementById("description-id").innerHTML = apiData.weather[0].main;
       document.getElementById("humidity-id").innerHTML = apiData.main.humidity;
       document.getElementById("wind-id").innerHTML = Math.round(apiData.wind.speed);
+      displayForecast();
       
       //Weather icon innerHTML
       //document.getElementById("weather-icon").innerHTML = apiData.weather[0].icon;
@@ -98,6 +99,7 @@ function showPosition(position) {
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${apiData.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", apiData.weather[0].description);
     document.getElementById("temp-id").innerHTML = Math.round(apiData.main.temp);
+    displayForecast();
     }
   };
 }
@@ -109,8 +111,6 @@ curLocButton.addEventListener("click", getCurrentPosition);
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-
-
 
 
 getCurrentPosition();
@@ -152,8 +152,9 @@ clickF.addEventListener("click", changeToF);
 
 function displayForecast() {
   let forecastElement = document.querySelector("#weather-forecast");
-  forecastElement.innerHTML = ` <div class="row">
-     
+  
+  let forecastHTML = `<div class="row">`;
+  forecastHTML = forecastHTML + `
       <div class="col">
           <div class="weather-forecast-date">
                 Mon
@@ -162,8 +163,7 @@ function displayForecast() {
             <i class="fa-solid fa-sun"></i>
            </div>
         </div>   
-  </div>
-          
+  </div>      
     <div class="row">
         <div class="col">
             <div class="weather-forecast-temps">
@@ -175,13 +175,14 @@ function displayForecast() {
                </span>  
             </div>  
         </div>
-       
   
-  </div>
      
-  </div>
-      
-  </div>   `
+
+`;
+  
+  forecastHTML = forecastHTML + '</div>';
+  forecastElement.innerHTML = forecastHTML;
+  
 }
 
 

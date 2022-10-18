@@ -10,8 +10,6 @@ let currentTime =
     
   });
 
-console.log(currentDate);
-console.log(currentTime);
 
 let searchInput = document.querySelector("#search-input");
 var userInput;
@@ -55,6 +53,7 @@ function apiFunction(userInput) {
       document.getElementById("humidity-id").innerHTML = apiData.main.humidity;
       document.getElementById("wind-id").innerHTML = Math.round(apiData.wind.speed);
       displayForecast();
+      getFutureForecast(apiData.coord);
       
       //Weather icon innerHTML
       //document.getElementById("weather-icon").innerHTML = apiData.weather[0].icon;
@@ -74,8 +73,6 @@ function showPosition(position) {
   isCelsius = false;
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  console.log(latitude);
-  console.log(longitude);
   let request = new XMLHttpRequest();
   let apiKey = "2d8475319de9c96b16189b154959ebf6";
   let url = `https://api.openweathermap.org/data/2.5/weather?&lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
@@ -100,8 +97,12 @@ function showPosition(position) {
     iconElement.setAttribute("alt", apiData.weather[0].description);
     document.getElementById("temp-id").innerHTML = Math.round(apiData.main.temp);
     displayForecast();
+    getFutureForecast(apiData.coord);
     }
   };
+
+
+  
 }
 
 
@@ -152,7 +153,7 @@ clickF.addEventListener("click", changeToF);
 
 function displayForecast() {
   let forecastElement = document.querySelector("#weather-forecast");
-  let days = ["Mon", "Tue", "Wed"];
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   
   let forecastHTML = `<div class="row">`;
 
@@ -188,3 +189,10 @@ function displayForecast() {
 
 
 displayForecast();
+
+
+//Begin 10/18 work 
+function getFutureForecast(coordinates){
+  console.log(coordinates);
+
+}

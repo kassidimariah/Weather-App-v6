@@ -194,5 +194,7 @@ displayForecast();
 //Begin 10/18 work 
 function getFutureForecast(coordinates){
   console.log(coordinates);
-
+  let apiKey = "89d423t20co7d39f283e0a0bb95baa46";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=${apiKey}&units=imperial`;
+  console.log(apiUrl);
 }

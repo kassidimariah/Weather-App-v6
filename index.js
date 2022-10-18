@@ -53,7 +53,17 @@ function apiFunction(userInput) {
       document.getElementById("humidity-id").innerHTML = apiData.main.humidity;
       document.getElementById("wind-id").innerHTML = Math.round(apiData.wind.speed);
       displayForecast();
-      getFutureForecast(apiData.coord);
+      getFutureForecast(apiData.coord, apiData.name);
+      let today = new Date();
+      let currentTime =
+      today.toLocaleTimeString(undefined, {
+    
+        hour:   '2-digit',
+        minute: '2-digit', 
+    
+    });
+      document.getElementById("time-display").innerHTML = currentTime;
+      
       
       //Weather icon innerHTML
       //document.getElementById("weather-icon").innerHTML = apiData.weather[0].icon;
@@ -97,7 +107,16 @@ function showPosition(position) {
     iconElement.setAttribute("alt", apiData.weather[0].description);
     document.getElementById("temp-id").innerHTML = Math.round(apiData.main.temp);
     displayForecast();
-    getFutureForecast(apiData.coord);
+    getFutureForecast(apiData.coord, apiData.name);
+    let today = new Date();
+    let currentTime =
+      today.toLocaleTimeString(undefined, {
+    
+        hour:   '2-digit',
+        minute: '2-digit', 
+    
+    });
+    document.getElementById("time-display").innerHTML = currentTime;
     }
   };
 
@@ -192,9 +211,9 @@ displayForecast();
 
 
 //Begin 10/18 work 
-function getFutureForecast(coordinates){
+function getFutureForecast(coordinates, cityName){
   console.log(coordinates);
   let apiKey = "89d423t20co7d39f283e0a0bb95baa46";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=imperial`;
   console.log(apiUrl);
 }

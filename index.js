@@ -169,6 +169,14 @@ clickC.addEventListener("click", changeToC);
 let clickF = document.querySelector("#fahrenheit-button");
 clickF.addEventListener("click", changeToF);
 
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let daysArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return daysArray[day];
+}
+
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -182,17 +190,17 @@ function displayForecast(response) {
     `
       <div class="col">
           <div class="weather-forecast-date">
-                ${forecastDay.dt}
+                ${formatDay(forecastDay.dt)}
            </div>
               <div class="weather-forecast-icon">
                 <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png">
               </div>
             <div class="weather-forecast-temps">
                <span class="weather-forecast-temp-max">
-                    ${forecastDay.temp.max}
+                    ${Math.round(forecastDay.temp.max)}
                </span>
                <span class="weather-forecast-temp-min">
-                    ${forecastDay.temp.min}
+                    ${Math.round(forecastDay.temp.min)}
                </span>  
             </div>  
         </div>       

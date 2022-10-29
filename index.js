@@ -116,12 +116,11 @@ function showPosition(position) {
     
   });
   document.getElementById("time-display").innerHTML = currentTime;
+  getFutureForecast(apiData.coord.lat, apiData.coord.lon);
 
     }
   };
 
-
-  
 }
 
 

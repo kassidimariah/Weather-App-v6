@@ -1,4 +1,1 @@
-10/12/2022 - weekend plan: 
 
-1. Get the celsius and fahrenheit buttons added and functioning 
-2. Make the CSS nicer
